@@ -1,0 +1,19 @@
+opam-version: "2.0"
+maintainer: "joris.giovannangeli@ahrefs.com"
+authors: "Ahrefs <github@ahrefs.com>"
+license: "MIT"
+homepage: "https://github.com/ahrefs/error_trace"
+dev-repo: "git+https://github.com/ahrefs/error_trace.git"
+bug-reports: "https://github.com/ahrefs/error_trace/issues"
+synopsis: "Generic error framework"
+build: [
+  ["dune" "subst"] {pinned}
+  ["dune" "build" "-p" name "-j" jobs "@install" "@runtest"{with-test} "@doc"{with-doc}]
+]
+depends: [
+  "ocaml" {>= "4.05.0"}
+  "dune" {>= "2.0"}
+  "containers"
+  "devkit"
+  "odoc" {with-doc}
+]

@@ -1,0 +1,3 @@
+(library
+ (public_name error_trace)
+ (libraries containers devkit))
